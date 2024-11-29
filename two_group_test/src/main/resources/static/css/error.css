@@ -1,0 +1,35 @@
+/* @author 심성완 */
+.error-container {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #f5c2c7;
+    background-color: #f8d7da;
+    border-radius: 5px;
+    width: 50%;
+}
+
+.error-container h1 {
+    color: #842029;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.error-container p {
+    color: #842029;
+    font-size: 1.2rem;
+}
+
+.error-container .btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #842029;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.error-container .btn:hover {
+    background-color: #721c24;
+    color: #fff;
+}

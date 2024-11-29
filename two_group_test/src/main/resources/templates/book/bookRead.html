@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/common}">
+
+<!-- @author 이영훈 -->
+
+<!-- CSS -->
+<th:block layout:fragment="css">
+    <link rel="stylesheet" th:href="@{/css/common.css}" />
+</th:block>
+
+<div layout:fragment="content">
+    <main class="bookReadContent">
+        <h1>도서 단건 조회 페이지</h1>
+        <br>
+        <div style="width:400px">
+            <div class="mb-3">
+                <label>도서코드: </label>
+                <input class="form-control" th:value="${bookDto.bookCode}" readonly />
+            </div>
+            <div class="mb-3">
+                <label>도서명: </label>
+                <input class="form-control" th:value="${bookDto.bookName}" readonly />
+            </div>
+            <div class="mb-3">
+                <label>출판사: </label>
+                <input class="form-control" th:value="${bookDto.publisher}" readonly />
+            </div>
+            <div class="mb-3">
+                <label>ISBN: </label>
+                <input class="form-control" th:value="${bookDto.isbn}" readonly />
+            </div>
+            <div>
+                <!-- 도서 수정 -->
+                <a th:href="@{/book/bookUpdate/{bookCode}(bookCode=${bookDto.bookCode})}"
+                   class="btn btn-success me-2">도서수정</a>
+
+                <!-- 도서 삭제 -->
+                <form th:action="@{/book/bookDelete}" method="post" style="display:inline;"
+                      onsubmit="return confirm('해당 도서를 삭제하시겠습니까?');">
+                    <!-- 삭제 요청에 bookCode를 포함하기 위해 hidden 필드 추가 -->
+                    <input type="hidden" name="bookCode" th:value="${bookDto.bookCode}" />
+                    <button type="submit" class="btn btn-danger me-5">도서삭제</button>
+                </form>
+
+                <!-- 이전으로 -->
+                <a th:href="@{/book/bookList}" class="btn btn-secondary ms-5">이전으로</a>
+            </div>
+        </div>
+    </main>
+</div>
+
+</html>

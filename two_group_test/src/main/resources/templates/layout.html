@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/common}">
+
+<!-- @author 이영훈 -->
+
+<th:block layout:fragment="script">
+<!--  <script defer type="text/javascript" th:src="@{}"></script>-->
+</th:block>
+<th:block layout:fragment="css">
+  <link rel="stylesheet" th:href="@{/css/common.css}" />
+</th:block>
+
+<div layout:fragment="content">
+    전체 페이지 기본으로 적용.
+</div>
+
+</html>
